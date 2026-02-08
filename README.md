@@ -1,27 +1,37 @@
 PROJET GENERATEUR PROFIL → OCI → KUBERNETES + NETWORKPOLICIES
-
+=========================================================================
 Description :
 Ce projet automatise la création et le déploiement d’applications conteneurisées
 à partir d’un profil YAML. À partir d’un profil déclaratif, le système génère automatiquement :
 - Un Dockerfile pour construire l’image OCI.
 - Les manifests Kubernetes (Namespace, Deployment, Service, NetworkPolicies).
 - Le script de déploiement pour appliquer ces manifests sur un cluster Kubernetes.
-
+=========================================================================
 Structure du projet :
-profiles/           - Profils YAML décrivant les applications
-generator/          - Scripts de génération automatique (Dockerfile, manifests)
-output/
-  docker/           - Dockerfile généré
-  k8s/              - Manifests Kubernetes générés
-scripts/            - Scripts utilitaires (deploy.sh, build_and_push.sh)
-README.txt          - Ce fichier
+- generator/
+  - generate_dockerfile.sh
+  - generate_k8s.sh
+  - build_and_push.sh
+- output/
+  - docker/
+    - Dockerfile
+  - k8s/
+    - namespace.yaml
+    - deployment.yaml
+    - service.yaml
+    - networkpolicy.yaml
+- profiles/
+  - web-debian.yaml
+- deploy.sh
+- README.md
 
+=========================================================================
 Prérequis :
 - Docker installé
 - Kubernetes (kind, minikube ou cluster distant)
 - kubectl configuré sur le cluster
 - Accès au GitHub Container Registry pour l’image OCI (si privée)
-
+=========================================================================
 Étapes d’utilisation :
 
 1. Créer le profil YAML
@@ -57,3 +67,17 @@ Remarques :
 - Le script deploy.sh applique d’abord le Namespace, puis le reste des manifests.
 - L’image Docker doit être accessible (publique ou via un imagePullSecret)
   pour que Kubernetes puisse la récupérer.
+=========================================================================
+
+Références :
+
+- Kubernetes NetworkPolicies : https://kubernetes.io/docs/concepts/services-networking/network-policies/
+- Docker Documentation : https://docs.docker.com/
+- Kind - Kubernetes in Docker : https://kind.sigs.k8s.io/
+
+=========================================================================
+
+Auteur :
+
+Groupe 1 - Master 2 IRS
+Amine KACHOU, Kamelia Hamadene, Safa Lazreg
