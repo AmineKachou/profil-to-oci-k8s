@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-all-ingress
+  namespace: web-debian
+spec:
+  podSelector:
+    matchLabels:
+      app: web-debian
+  policyTypes:
+    - Ingress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-http
+  namespace: web-debian
+spec:
+  podSelector:
+    matchLabels:
+      app: web-debian
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              role: ingress
+      ports:
+        - protocol: TCP
+          port: 80

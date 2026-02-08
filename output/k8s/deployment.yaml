@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-debian
+  namespace: web-debian
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-debian
+  template:
+    metadata:
+      labels:
+        app: web-debian
+    spec:
+      containers:
+        - name: nginx
+          image: ghcr.io/AMINEKACHOU/web-debian:debian12-v1
+          ports:
+            - containerPort: 80
