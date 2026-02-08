@@ -3,9 +3,9 @@
 PROFILE=$1
 OUTPUT=output/docker/Dockerfile
 
-DISTRO=$(yq '.os.distro' $PROFILE)
-VERSION=$(yq '.os.version' $PROFILE)
-PACKAGES=$(yq '.software[]' $PROFILE | tr '\n' ' ')
+DISTRO=$(yq e '.os.distro' $PROFILE)
+VERSION=$(yq e '.os.version' $PROFILE)
+PACKAGES=$(yq e '.software[]' $PROFILE | tr '\n' ' ')
 
 mkdir -p output/docker
 

@@ -13,8 +13,10 @@ spec:
       labels:
         app: web-debian
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: nginx
-          image: ghcr.io/AMINEKACHOU/web-debian:debian12-v1
+          image: ghcr.io/aminekachou/web-debian:debian12-v1
           ports:
             - containerPort: 80
