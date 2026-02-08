@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE=ghcr.io/AmineKachou/web-debian:debian12-v1
+IMAGE=ghcr.io/aminekachou/web-debian:debian12-v1
 
 
 docker build -t $IMAGE output/docker
