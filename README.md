@@ -18,16 +18,16 @@ L'objectif est d'automatiser la création et le déploiement d'une application c
 Structure du projet :
 
 profil-to-oci-k8s/
-├── profiles/               
+├── profiles/
 │   └── web-debian.yaml
-├── generator/              
+├── generator/
 │   ├── generate_dockerfile.sh
 │   ├── generate_k8s.sh
 │   └── build_and_push.sh
-├── output/                 
+├── output/
 │   ├── docker/
 │   └── k8s/
-├── deploy.sh               
+├── deploy.sh
 └── README.txt
 
 =========================================================================
@@ -117,4 +117,4 @@ Références :
 Auteur :
 
 Groupe 1 - Master 2 IRS
-Amine KACHOU, Kamelia Hamadene,Safa Lazreg
+Amine KACHOU, Kamelia Hamadene, Safa Lazreg
