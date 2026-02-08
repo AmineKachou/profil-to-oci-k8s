@@ -1,12 +1,12 @@
 PROJET GENERATEUR PROFIL → OCI → KUBERNETES + NETWORKPOLICIES
-=========================================================================
+=======================================================================
 Description :
 Ce projet automatise la création et le déploiement d’applications conteneurisées
 à partir d’un profil YAML. À partir d’un profil déclaratif, le système génère automatiquement :
 - Un Dockerfile pour construire l’image OCI.
 - Les manifests Kubernetes (Namespace, Deployment, Service, NetworkPolicies).
 - Le script de déploiement pour appliquer ces manifests sur un cluster Kubernetes.
-=========================================================================
+=======================================================================
 Structure du projet :
 - generator/
   - generate_dockerfile.sh
@@ -25,13 +25,13 @@ Structure du projet :
 - deploy.sh
 - README.md
 
-=========================================================================
+=======================================================================
 Prérequis :
 - Docker installé
 - Kubernetes (kind, minikube ou cluster distant)
 - kubectl configuré sur le cluster
 - Accès au GitHub Container Registry pour l’image OCI (si privée)
-=========================================================================
+=======================================================================
 Étapes d’utilisation :
 
 1. Créer le profil YAML
@@ -67,7 +67,7 @@ Remarques :
 - Le script deploy.sh applique d’abord le Namespace, puis le reste des manifests.
 - L’image Docker doit être accessible (publique ou via un imagePullSecret)
   pour que Kubernetes puisse la récupérer.
-=========================================================================
+=======================================================================
 
 Références :
 
@@ -75,7 +75,7 @@ Références :
 - Docker Documentation : https://docs.docker.com/
 - Kind - Kubernetes in Docker : https://kind.sigs.k8s.io/
 
-=========================================================================
+=======================================================================
 
 Auteur :
 
