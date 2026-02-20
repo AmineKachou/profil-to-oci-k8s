@@ -37,20 +37,6 @@ Ce projet fournit une chaîne d'outils complète pour générer et déployer des
 ```
 
 ---
-
-## ✅ Prérequis
-
-Avant de commencer, assurez-vous d'avoir les outils suivants installés et configurés :
-
-| Outil | Usage |
-|-------|-------|
-| [Docker](https://docs.docker.com/) | Construction et publication des images OCI |
-| [kubectl](https://kubernetes.io/docs/tasks/tools/) | Interaction avec le cluster Kubernetes |
-| [Kind](https://kind.sigs.k8s.io/) / [Minikube](https://minikube.sigs.k8s.io/) ou cluster distant | Environnement Kubernetes |
-| Accès au [GitHub Container Registry](https://ghcr.io) | Hébergement de l'image OCI (si image privée) |
-
----
-
 ## 🛠️ Utilisation
 
 ### Étape 1 — Créer le profil YAML
